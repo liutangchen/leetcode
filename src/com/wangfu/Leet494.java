@@ -1,5 +1,10 @@
 package com.wangfu;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.Arrays;
+
 public class Leet494 {
     int count = 0;
 
@@ -18,5 +23,6 @@ public class Leet494 {
             calculate(nums, i + 1, sum - nums[i], s);
         }
     }
-
 }
+
+

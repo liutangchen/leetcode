@@ -5,7 +5,7 @@ public class Leet134 {
         int indexMin = 0, min = Integer.MAX_VALUE, remain = 0;
         for (int i = 0; i < gas.length; i++) {
             remain += gas[i] - cost[i];
-            if (remain < min){
+            if (remain < min) {
                 min = remain;
                 indexMin = i;
             }
@@ -13,6 +13,6 @@ public class Leet134 {
         if (remain < 0)
             return -1;
         else
-            return (indexMin+1)%gas.length;
+            return (indexMin + 1) % gas.length;
     }
 }

@@ -20,6 +20,7 @@ public class Leet35 {
                 j = middle - 1;
             }
         }
+        // 在i和j中大于target的下标处插入
         if (nums[i] > target)
             return i;
         return j;

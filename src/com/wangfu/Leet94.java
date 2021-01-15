@@ -7,6 +7,7 @@ import java.util.Stack;
 public class Leet94 {
     /**
      * 二叉树中序遍历非递归算法
+     *
      * @param root
      * @return
      */
@@ -24,5 +25,22 @@ public class Leet94 {
             }
         }
         return list;
+    }
+
+    /**
+     * 二叉树中序遍历递归算法
+     *
+     * @param root
+     * @return
+     */
+    List<Integer> res = new ArrayList<>();
+
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        if (root != null) {
+            inorderTraversal2(root.left);
+            res.add(root.val);
+            inorderTraversal2(root.right);
+        }
+        return res;
     }
 }

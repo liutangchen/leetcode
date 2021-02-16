@@ -3,8 +3,8 @@ package com.wangfu;
 import java.util.Stack;
 
 public class Offer09 {
-    Stack<Integer> stack1;
-    Stack<Integer> stack2;
+    Stack<Integer> stack1; // 用来暂存元素
+    Stack<Integer> stack2; // 作为出口
 
     public Offer09() {
         stack1 = new Stack<>();

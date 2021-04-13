@@ -14,7 +14,7 @@ public class Leet199 {
     private void dfs(TreeNode root, int depth) {
         if (root == null)
             return;
-        if (depth == res.size())
+        if (res.size() == depth)
             res.add(root.val);
         depth++;
         dfs(root.right, depth);

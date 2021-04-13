@@ -12,19 +12,22 @@ public class Leet94 {
      * @return
      */
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
+        if (root == null)
+            return res;
         Stack<TreeNode> stack = new Stack<>();
+        TreeNode temp = null;
         while (!stack.isEmpty() || root != null) {
             if (root != null) {
                 stack.push(root);
                 root = root.left;
             } else {
-                TreeNode temp = stack.pop();
-                list.add(temp.val);
+                temp = stack.pop();
+                res.add(temp.val);
                 root = temp.right;
             }
         }
-        return list;
+        return res;
     }
 
     /**

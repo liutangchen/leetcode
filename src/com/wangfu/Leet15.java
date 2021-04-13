@@ -4,33 +4,36 @@ import java.util.*;
 
 public class Leet15 {
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        if (nums.length < 3)
-            return res;
+        if (nums == null || nums.length <= 0)
+            return new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length - 2; i++) {
-            if (nums[i] > 0)
-                break;
-            if (i >= 1 && nums[i] == nums[i - 1]) {
+        int i = 0;
+        while (i < nums.length && nums[i] <= 0) {
+            // 重复的跳过
+            if (i - 1 >= 0 && nums[i] == nums[i - 1]) {
+                i++;
                 continue;
             }
             int l = i + 1, r = nums.length - 1;
             while (l < r) {
-                int sum = nums[i] + nums[l] + nums[r];
-                if (sum == 0) {
-                    res.add(Arrays.asList(nums[i], nums[l], nums[r]));
+                if (nums[i] + nums[l] + nums[r] == 0) {
+                    result.add(Arrays.asList(nums[i], nums[l], nums[r]));
+                    // 重复的跳过
                     while (l < r && nums[l] == nums[l + 1])
                         l++;
-                    while (r > l && nums[r - 1] == nums[r])
+                    while (l < r && nums[r] == nums[r - 1])
                         r--;
                     l++;
                     r--;
-                } else if (sum < 0)
+                } else if (nums[i] + nums[l] + nums[r] < 0) {
                     l++;
-                else
+                } else {
                     r--;
+                }
             }
+            i++;
         }
-        return res;
+        return result;
     }
 }

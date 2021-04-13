@@ -9,13 +9,13 @@ public class Leet236 {
     }
 
     private boolean isContainsPOrQ(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null)
+        if (root == null) {
             return false;
-        boolean lson = isContainsPOrQ(root.left, p, q);
-        boolean rson = isContainsPOrQ(root.right, p, q);
-        if (lson && rson || (root == p || root == q) && (lson || rson)) {
-            res = root;
         }
-        return lson || rson || root == p || root == q;
+        boolean left = isContainsPOrQ(root.left, p, q);
+        boolean right = isContainsPOrQ(root.right, p, q);
+        if (left && right || (root == p || root == q) && (left || right))
+            res = root;
+        return left || right || root == p || root == q;
     }
 }

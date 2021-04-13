@@ -3,6 +3,7 @@ package com.wangfu;
 public class Leet142 {
     /**
      * 快慢指针
+     *
      * @param head
      * @return
      */
@@ -12,18 +13,17 @@ public class Leet142 {
         ListNode fast = head, slow = head;
         while (fast != null) {
             slow = slow.next;
-            if (fast.next != null) {
+            if (fast.next != null)
                 fast = fast.next.next;
-            } else {
+            else
                 return null;
-            }
             if (slow == fast) {
-                ListNode p = head;
-                while (p != slow) {
-                    p = p.next;
+                ListNode ptr = head;
+                while (ptr != slow) {
+                    ptr = ptr.next;
                     slow = slow.next;
                 }
-                return p;
+                return ptr;
             }
         }
         return null;

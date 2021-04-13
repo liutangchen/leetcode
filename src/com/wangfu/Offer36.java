@@ -1,3 +1,4 @@
+/*
 package com.wangfu;
 
 
@@ -28,3 +29,4 @@ public class Offer36 {
     }
 }
 
+*/

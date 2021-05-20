@@ -12,7 +12,7 @@ public class Leet113 {
             return res;
         list.add(root.val);
         if (root.left == null && root.right == null && root.val == sum) {
-            res.add(new ArrayList<>(list));
+            res.add(new ArrayList<>(list));    // 注意这里是新new一个ArrayList
         }
         pathSum(root.left, sum - root.val);
         if (root.left != null)

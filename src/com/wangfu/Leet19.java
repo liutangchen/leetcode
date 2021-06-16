@@ -5,7 +5,7 @@ public class Leet19 {
         ListNode headNew = new ListNode(-1); // 加头节点便于统一处理
         headNew.next = head;
         ListNode pre = headNew, tail = headNew;
-        for (int i = 0; i < n + 1; i++) {
+        for (int i = 0; i < n + 1; i++) {  // 注意这里是先走n+1步
             pre = pre.next;
         }
         while (pre != null) {

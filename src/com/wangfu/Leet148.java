@@ -9,8 +9,9 @@ public class Leet148 {
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null)
             return head;
-        ListNode fast = head.next, slow = head;
-        while (fast != null && fast.next != null) {
+        // 快慢指针找到中间节点
+        ListNode fast = head, slow = head;
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
